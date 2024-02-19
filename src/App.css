@@ -25,9 +25,15 @@ body {
 
 .search-container {
   display: flex;
-  width: 50%;
-  margin-bottom: 2rem;
+  justify-content: center;
+  margin-bottom: 10px;
 }
+
+.search-container input {
+  width: 200px;
+  padding: 5px;
+}
+
 
 input[type="text"] {
   width: 100%;
@@ -43,6 +49,8 @@ button {
   border: none;
   cursor: pointer;
   margin-left: 0.5rem;
+  width: 80px; /* fixed width */
+  height: 40px; /* fixed height */
 }
 
 button:hover {
@@ -50,10 +58,28 @@ button:hover {
 }
 
 .info-container {
-  width: 50%;
+  width: 35%;
   margin-top: 2rem;
   padding: 1rem;
   border: 1px solid #ddd;
   border-radius: 4px;
   background-color: #f5f5f5;
+}
+
+.suggestion-container {
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+.suggestions-list {
+  list-style: none;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
 }
