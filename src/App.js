@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 import Autosuggest from "react-autosuggest";
@@ -7,15 +7,27 @@ const App = () => {
   const [food, setFood] = useState("");
   const [info, setInfo] = useState({});
   const [loading, setLoading] = useState(false);
+  const [foodName, setFoodName] = useState([]);
 
-  const API_URL = "http://localhost:3000/api/foodInfo";
+  const API_URL = "http://localhost:3000/api/";
 
+  useEffect(() => {
+    fetch(`${API_URL}api/foodList`)
+      .then(response => response.json())
+      .then(data => {
+        setFoodName(data);
+      })
+      .catch(error => {
+        console.error('Error fetching food list:', error);
+      });
+  }, []); 
+  
   const getSuggestions = (value) => {
-    // Update this with new food list api
-    const foodNames = ["apple", "banana", "carrot", "donut", "egg", "fig"];
+
+    const foodNames = foodName;
     return foodNames.filter((food) => food.toLowerCase().includes(value.toLowerCase()));
   };
-
+  
   const renderSuggestion = (suggestion) => {
     return (
       <div>
@@ -35,7 +47,7 @@ const App = () => {
   const handleSearchFood = () => {
     setLoading(true);
     axios
-      .get(`${API_URL}?name=${food}`)
+      .get(`${API_URL}foodInfo?name=${food}`)
       .then((response) => {
         setInfo({ food: response.data.food });
       })
