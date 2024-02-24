@@ -25,7 +25,7 @@ const App = () => {
   const getSuggestions = (value) => {
 
     const foodNames = foodName;
-    return foodNames.filter((food) => food.toLowerCase().includes(value.toLowerCase()));
+    return foodNames.filter((food) => food.toLowerCase().startsWith(value.toLowerCase()));
   };
   
   const renderSuggestion = (suggestion) => {
