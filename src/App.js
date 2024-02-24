@@ -8,11 +8,11 @@ const App = () => {
   const [info, setInfo] = useState({});
   const [loading, setLoading] = useState(false);
   const [foodName, setFoodName] = useState([]);
-
+  
   const API_URL = "http://localhost:3000/api/";
 
   useEffect(() => {
-    fetch(`${API_URL}api/foodList`)
+    fetch('http://localhost:3000/api/foodList')
       .then(response => response.json())
       .then(data => {
         setFoodName(data);
@@ -21,7 +21,7 @@ const App = () => {
         console.error('Error fetching food list:', error);
       });
   }, []); 
-  
+
   const getSuggestions = (value) => {
 
     const foodNames = foodName;
