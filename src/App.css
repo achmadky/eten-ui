@@ -69,12 +69,14 @@ button:hover {
 .suggestion-container {
   width: 100%;
   max-width: 400px;
-  border: 1px solid #ddd;
   border-radius: 4px;
   background-color: #f5f5f5;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-top: 0.5rem;
   overflow: hidden;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-bottom: 10px;
 }
 
 .suggestions-list {
@@ -82,4 +84,28 @@ button:hover {
   list-style-type: none;
   padding: 0px;
   margin: 0px;
+}
+
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+  /* border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-top: 1px solid #ccc; */
+
+}
+
+.suggestion-text {
+  font-weight: bold;
+}
+
+.suggestion-text:first-letter {
+  font-weight: normal;
+}
+
+.react-autosuggest__suggestions-list {
+  list-style-type: none;
 }

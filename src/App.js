@@ -30,8 +30,8 @@ const App = () => {
   
   const renderSuggestion = (suggestion) => {
     return (
-      <div>
-        {suggestion}
+      <div className="suggestion-item">
+        <span className="suggestion-text">{suggestion}</span>
       </div>
     );
   };
@@ -71,7 +71,13 @@ const App = () => {
           getSuggestionValue={(suggestion) => suggestion}
           renderSuggestion={renderSuggestion}
           inputProps={inputProps}
-        />
+          styles={{
+            suggestionsList: {
+              listStyleType: "none",
+              
+            },
+          }}
+          />
         </div>
         <button onClick={handleSearchFood}>Search</button>
       </div>
