@@ -9,10 +9,10 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const [foodName, setFoodName] = useState([]);
   
-  const API_URL = "http://localhost:3000/api/";
+  const API_URL = "http://eten-api.vercel.app/api/";
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/foodList')
+    fetch('http://eten-api.vercel.app/api/foodList')
       .then(response => response.json())
       .then(data => {
         setFoodName(data);
